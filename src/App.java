@@ -2,32 +2,33 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        EjerciciosRecursivos er = new EjerciciosRecursivos();
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        Recursividad rec = new Recursividad();
 
-        // Solicitar número para la suma de consecutivos
-        System.out.print("Introduce el número para la suma de consecutivos: ");
-        int numeroSuma = scanner.nextInt();
-        int resultadoSuma = er.sumaConsecutivos(numeroSuma);
-        System.out.println("Resultado de la suma: " + resultadoSuma);
-        System.out.println()
-        ;
-        // Solicitar base y exponente para calcular la potencia
-        System.out.print("Introduce la base para la potencia: ");
-        int base = scanner.nextInt();
-        System.out.print("Introduce el exponente para la potencia: ");
-        int exponente = scanner.nextInt();
-        int resultadoPotencia = er.potencia(base, exponente);
-        System.out.println("Resultado de la potencia: " + resultadoPotencia);
-        System.out.println();
+        // Ejercicio 1: Suma de los números consecutivos
+        System.out.println("-----Ejercicio 1-----");
+        System.out.print("Ingrese un número para sumar los numeros hasta el numero que ingreso: ");
+        int n = sc.nextInt();
+        System.out.println("Resultado: " + rec.sumaConsecutivos(n));
 
-        // Solicitar número para sumar los dígitos
-        System.out.print("Introduce un número para sumar sus dígitos: ");
-        int numeroDigitos = scanner.nextInt();
-        int resultadoSumaDigitos = er.sumaDigitos(numeroDigitos);
-        System.out.println("Resultado de la suma de los digitos: " + resultadoSumaDigitos);
+        // Ejercicio 2: Potencia
+        System.out.println("-----Ejercicio 2-----");
+        System.out.print("Ingrese la base: ");
+        int base = sc.nextInt();
+        System.out.print("Ingrese el exponente: ");
+        int exponente = sc.nextInt();
+        System.out.println("Resultado de la potencia: " + rec.potencia(base, exponente));
 
-        // Cerrar el scanner
-        scanner.close();
+        // Ejercicio 3: Suma de dígitos
+        System.out.println("-----Ejercicio 3-----");
+        System.out.print("Ingrese un número para sumar los digitos entre si: ");
+        int numero = sc.nextInt();
+        System.out.println("Resultado: " + rec.sumaDigitos(numero));
+
+        // Fibonacci
+        System.out.println("----Fibonacci-----");
+        System.out.print("Ingrese un número: ");
+        int n1 = sc.nextInt();
+        rec.fibonacci(n1);
     }
 }
