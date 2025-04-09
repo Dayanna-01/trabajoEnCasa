@@ -5,30 +5,51 @@ public class App {
         Scanner sc = new Scanner(System.in);
         Recursividad rec = new Recursividad();
 
-        // Ejercicio 1: Suma de los números consecutivos
-        System.out.println("-----Ejercicio 1-----");
-        System.out.print("Ingrese un número para sumar los numeros hasta el numero que ingreso: ");
-        int n = sc.nextInt();
-        System.out.println("Resultado: " + rec.sumaConsecutivos(n));
+        System.out.println("Seleccione un ejercicio:");
+        System.out.println("1. Suma de los números consecutivos");
+        System.out.println("2. Potencia");
+        System.out.println("3. Suma de dígitos");
+        System.out.println("4. Fibonacci");
+        int opcion = sc.nextInt();
 
-        // Ejercicio 2: Potencia
-        System.out.println("-----Ejercicio 2-----");
-        System.out.print("Ingrese la base: ");
-        int base = sc.nextInt();
-        System.out.print("Ingrese el exponente: ");
-        int exponente = sc.nextInt();
-        System.out.println("Resultado de la potencia: " + rec.potencia(base, exponente));
+        switch (opcion) {
+            case 1:
+                // Ejercicio 1: Suma de los números consecutivos
+                System.out.println("-----Ejercicio 1-----");
+                System.out.print("Ingrese un número para sumar los números hasta el número que ingresó: ");
+                int n = sc.nextInt();
+                System.out.println("Resultado: " + rec.sumaConsecutivos(n));
+                break;
 
-        // Ejercicio 3: Suma de dígitos
-        System.out.println("-----Ejercicio 3-----");
-        System.out.print("Ingrese un número para sumar los digitos entre si: ");
-        int numero = sc.nextInt();
-        System.out.println("Resultado: " + rec.sumaDigitos(numero));
+            case 2:
+                // Ejercicio 2: Potencia
+                System.out.println("-----Ejercicio 2-----");
+                System.out.print("Ingrese la base: ");
+                int base = sc.nextInt();
+                System.out.print("Ingrese el exponente: ");
+                int exponente = sc.nextInt();
+                System.out.println("Resultado de la potencia: " + rec.potencia(base, exponente));
+                break;
 
-        // Fibonacci
-        System.out.println("----Fibonacci-----");
-        System.out.print("Ingrese un número: ");
-        int n1 = sc.nextInt();
-        rec.fibonacci(n1);
+            case 3:
+                // Ejercicio 3: Suma de dígitos
+                System.out.println("-----Ejercicio 3-----");
+                System.out.print("Ingrese un número para sumar los dígitos entre sí: ");
+                int numero = sc.nextInt();
+                System.out.println("Resultado: " + rec.sumaDigitos(numero));
+                break;
+
+            case 4:
+                // Fibonacci
+                System.out.println("----Fibonacci-----");
+                System.out.print("Ingrese un número: ");
+                int n1 = sc.nextInt();
+                rec.fibonacci(n1);
+                break;
+
+            default:
+                System.out.println("Opción no válida.");
+                break;
+        }
     }
 }
